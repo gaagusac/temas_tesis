@@ -1,424 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temas de Tesis</title>
-  <style>
-    body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    h1, h2, h3 {
-      color: #ffffff;
-      font-weight: 600;
-      border-bottom: 1px solid #30363d;
-      padding-bottom: 0.5rem;
-    }
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      border-bottom-color: #58a6ff;
-      border-bottom-width: 2px;
-      margin-bottom: 2rem;
-    }
-    h2 {
-      font-size: 1.8rem;
-      color: #79c0ff;
-      margin-top: 2.5rem;
-    }
-    h3 {
-      font-size: 1.5rem;
-      color: #c9d1d9;
-      margin-top: 2rem;
-    }
-    p, li {
-      font-size: 1rem;
-      text-align: justify;
-    }
-    ul {
-      list-style-position: outside;
-      padding-left: 20px;
-    }
-    li {
-        margin-bottom: 0.5rem;
-    }
-    code {
-      background-color: #21262d;
-      color: #c9d1d9;
-      padding: 0.2em 0.4em;
-      border-radius: 6px;
-      font-family: "Fira Code", "Courier New", monospace;
-      font-size: 0.9em;
-    }
-    hr {
-        border: 0;
-        height: 1px;
-        background-color: #30363d;
-        margin: 2rem 0;
-    }
-    .tema-separator {
-        height: 2px;
-        background-color: #58a6ff;
-        margin: 4rem 0;
-    }
-    .nav-container {
-      background-color: #161b22;
-      padding: 1rem;
-      border-bottom: 1px solid #30363d;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-around;
-    }
-    nav a {
-      color: #58a6ff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    div[id^="tema-"] {
-      scroll-margin-top: 70px; /* Adjust this value based on the height of your nav bar */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Tesis: Verificación de Títulos con Blockchain</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            border-bottom: 2px solid #3498db;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            border-bottom: none;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #2980b9;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
-  <div class="nav-container">
-    <nav>
-      <a href="#tema-1">Tema 1</a>
-      <a href="#tema-2">Tema 2</a>
-      <a href="#tema-3">Tema 3</a>
-      <a href="#tema-4">Tema 4</a>
-    </nav>
-  </div>
-  <div class="container">
-    <h1>Propuestas de Tesis</h1>
-    <div id="tema-1">
-      <h2>Eliminando Picos de Latencia en la IA de Videojuegos con Asignación de Memoria por Frame (Frame Arenas)</h2>
-      <hr>
-      <h3>1. Resumen / Planteamiento de la Tesis</h3>
-      <p>Esta tesis investigará, implementará y cuantificará los beneficios de rendimiento de un asignador de memoria de tipo arena por frame (también conocido como "frame allocator" o "bump allocator") para sistemas de inteligencia artificial en videojuegos de tiempo real. Demostraremos que al reemplazar la asignación dinámica de memoria de la biblioteca estándar (malloc/new) por una arena de frame para todos los cálculos de IA de corta duración, podemos reducir o eliminar significativamente los picos de latencia no deterministas, lo que conduce a una tasa de frames más estable y una experiencia de juego más fluida. La hipótesis principal es que una arena de frame producirá un tiempo de frame menor y más consistente en comparación con un asignador de memoria heap tradicional, especialmente bajo una carga de IA intensiva.</p>
-      <hr>
-      <h3>2. El Problema Central: Por Qué los Asignadores Estándar Fallan en los Videojuegos</h3>
-      <p>En una aplicación de tiempo real como un videojuego, el objetivo principal es renderizar un nuevo frame a un intervalo constante (por ejemplo, cada 16.67ms para 60 FPS). Cualquier tarea que tome un tiempo impredeciblemente largo puede causar que el frame se retrase, resultando en un "tirón" o "micro-parón" visible.</p><p>Los asignadores de memoria dinámica estándar (malloc, new) son una fuente común de estos tirones por varias razones:</p>
-      <ul>
-        <li>Rendimiento no Determinista: El tiempo que se tarda en satisfacer una solicitud de asignación de memoria no es constante. El asignador podría tener que buscar en estructuras de datos complejas (como listas de bloques libres) para encontrar un bloque de memoria adecuado. Este tiempo de búsqueda puede variar enormemente dependiendo del estado del heap.</li>
-        <li>Sobrecarga por Llamadas al Sistema: Si el asignador no puede encontrar un bloque adecuado, debe solicitar más memoria al sistema operativo. Esto implica un cambio de contexto y una llamada al sistema, que es una operación muy lenta.</li>
-        <li>Fragmentación del Heap: Durante una sesión de juego larga, el heap de memoria puede fragmentarse. Puede haber mucha memoria libre en total, pero está dividida en muchos bloques pequeños y no contiguos. Una solicitud de un bloque más grande puede fallar o desencadenar una costosa operación de compactación del heap.</li>
-        <li>Costo de Desasignación: free y delete también tienen un costo. Tienen que devolver el bloque de memoria a las estructuras de datos del asignador, lo que puede implicar fusionarlo con bloques libres adyacentes. Para una IA que crea y destruye miles de objetos temporales por frame, este costo se acumula.</li>
-        <li>Mala Localidad de Caché: Llamadas repetidas a malloc pueden devolver direcciones de memoria que están muy separadas entre sí. Cuando la IA procesa estos datos, la CPU tiene que buscar constantemente nuevos datos de la memoria principal, lo que provoca fallos de caché (cache misses), otra fuente de ralentización.</li>
-      </ul>
-      <hr>
-      <h3>3. La Solución Propuesta: El Asignador por Frame (Frame Allocator)</h3>
-      <p>Un asignador por frame resuelve todos estos problemas para la memoria que solo necesita existir durante un único frame.</p><p>Cómo Funciona:</p>
-      <h4>1. Inicialización:</h4><p>Al comienzo de un nivel o del juego, se asigna un único bloque de memoria grande y contiguo (la "arena"). Esta es una sola gran asignación, y es la única que se realizara en un tiempo.</p>
-      <h4>2. El Puntero Incremental (Bump Pointer):</h4><p>Se mantiene un único puntero, llamémoslo m_ptr, que inicialmente apunta al comienzo de la arena.</p>
-      <h4>3. Asignación (<code>alloc(size)</code>):</h4><p>Cuando la IA necesita memoria, la función alloc es increíblemente simple:</p>
-      <ul>
-        <li>Devuelve el valor actual de m_ptr.</li>
-        <li>"Incrementa" m_ptr hacia adelante por el size solicitado.</li>
-        <li>Esto es solo devolver un puntero y una suma de enteros. Es una operación de coste constante (O(1)) y extremadamente rápida.</li>
-      </ul>
-      <h4>4. Desasignación (Fin del Frame):</h4><p>Esta es la parte mágica. Al final del frame, después de que se ha renderizado y todos los datos temporales de la IA ya no son necesarios, no se libera (free) nada individualmente. En su lugar, se llama a una única función, reset(), que hace una cosa:</p>
-      <ul>
-        <li>Restablece m_ptr de vuelta al comienzo de la arena.</li>
-        <li>Esto también es una operación O(1). Toda la memoria utilizada durante ese frame ahora se considera libre y será sobrescrita en el siguiente frame.</li>
-      </ul>
-      <p>Este enfoque garantiza asignaciones rápidas, deterministas y amigables con la caché para todos los datos temporales.</p>
-      <hr>
-      <h3>4. Metodología: Un Plan Paso a Paso</h3>
-      <h4>1. Fase 1: Entorno y Configuración de Base (Baseline)</h4>
-      <ul>
-        <li>Lenguaje: Elejir un lenguaje sin recolección de basura. C++ o Rust son los candidatos ideales.</li>
-        <li>Framework: Usa una biblioteca gráfica 2D simple como Raylib, SDL o SFML. Evitaremos grandes motores de juego como Unity o Unreal, ya que tienen sus propios gestores de memoria complejos que ocultarán los efectos que intentamos medir.</li>
-        <li>Crear la Simulación: Construir un escenario de juego simple. Por ejemplo:
-          <ul>
-            <li>Un mundo 2D visto desde arriba con obstáculos.</li>
-            <li>50-100 agentes de IA.</li>
-            <li>Cada agente debe realizar una tarea computacionalmente intensiva cada frame que requiera memoria dinámica. El algoritmo de búsqueda de caminos A* es una elección perfecta para esto, ya que encontrar una ruta requiere crear muchos objetos "nodo" temporales. Un árbol de comportamiento que se reconstruye o reevalúa cada frame es otra gran opción.</li>
-          </ul>
-        </li>
-        <li>Implementar la Base: Implementar toda la simulación usando new/delete (o malloc/free) estándar. Este será nuestro "grupo de control".</li>
-      </ul>
-      <h4>2. Fase 2: Implementar el Asignador por Frame</h4>
-      <ul>
-        <li>Crea una clase o struct FrameArena.</li>
-        <li>Tendrá un constructor que asigna el bloque de memoria principal, un destructor que lo libera, el método <code>alloc(size)</code> y el método <code>reset()</code>.</li>
-        <li>Probablemente se necesite sobrecargar operator "new" o usar "placement new" en C++ para que la integración sea fluida. En Rust, se puede pasar una referencia mutable al asignador.</li>
-      </ul>
-      <h4>3. Fase 3: Integración y Refactorización</h4>
-      <ul>
-        <li>En el bucle de juego principal, justo al principio, llamar a frame_arena.reset().</li>
-        <li>Revisar tu código de IA (por ejemplo, el algoritmo A*). Encontrar cada lugar donde se asigna memoria con  new de un objeto temporal.</li>
-        <li>Cambiarlo para que asigne memoria desde la implementacion de  frame_arena.</li>
-        <li>Crucialmente, eliminar todas las llamadas <code>delete</code> correspondientes. El reset() se encarga de todo. Esto a menudo hace que el código sea más limpio.</li>
-      </ul>
-      <h4>4. Fase 4: Benchmarking y Recolección de Datos</h4>
-      <ul>
-        <li>Tanto para la versión base como para la versión con la arena, ejecutar la simulación durante un período fijo (por ejemplo, 300 segundos).</li>
-        <li>En el bucle de juego, registrar el tiempo exacto que se tarda en completar cada frame (el "tiempo de frame").</li>
-        <li>Escribir estos tiempos en un archivo CSV para su posterior análisis.</li>
-      </ul>
-      <hr>
-      <h3>5. Métricas de Evaluación: Demostrando el Éxito</h3>
-      <p>La tesis será evaluada en base al análisis de los datos que recolectemos. Compararemos las dos versiones utilizando estas métricas clave:</p>
-      <ul>
-        <li>Tiempo de Frame Promedio: Una medida simple del rendimiento general.</li>
-        <li>Tiempo de Frame Máximo (Peor Caso): Esta es una métrica crítica. Muestra el frame más largo, que corresponde al peor "tirón" que experimentaría el jugador. Se espera que sea dramáticamente menor en la versión con la arena.</li>
-        <li>Desviación Estándar del Tiempo de Frame: Esta es la medida estadística más importante. Cuantifica la variabilidad o "jitter" en los tiempos de frame. Una desviación estándar más baja significa una experiencia más suave y consistente.</li>
-        <li>Histograma de Tiempos de Frame: Un gráfico que muestra la distribución de los tiempos de frame. La versión base probablemente tendrá una "cola larga" de frames lentos. El gráfico de la versión con la arena debería ser un pico estrecho y ajustado, mostrando una alta consistencia.</li>
-      </ul>
-      <hr>
-      <h3>6. Posibles Desafíos y Extensiones (Para una Calificación Sobresaliente)</h3>
-      <ul>
-        <li>Elegir el Tamaño de la Arena: ¿Qué tan grande debe ser la arena? Si es demasiado pequeña, nos quedaremos sin memoria. Si es demasiado grande, desperdiciamos memoria. La tesis debería discutir este equilibrio. Un buen enfoque es ejecutar la simulación, encontrar el pico máximo de memoria utilizada en un solo frame ("high water mark") y añadir un margen de seguridad.</li>
-        <li>Manejar Tiempos de Vida Más Largos: ¿Qué pasa con la memoria que necesita vivir más de un frame, pero no para siempre (por ejemplo, un efecto de partículas)? El asignador por frame simple no puede manejar esto. Se podria proponer e implementar un sistema de arenas múltiples como extensión:
-          <ul>
-            <li>Una FrameArena para datos por frame.</li>
-            <li>Una LevelArena para datos que viven durante todo un nivel.</li>
-          </ul>
-        </li>
-        <li>Depuración (Debugging): Depurar código basado en arenas puede ser complicado. Un error de "usar después de liberar" (use-after-free) se convierte en un error de "usar después de reiniciar" (use-after-reset), que puede ser más difícil de rastrear. Discutir estos desafíos de ingeniería de software demuestra una comprensión más profunda.</li>
-      </ul>
-    </div>
-    <hr class="tema-separator">
-    <div id="tema-2">
-      <h2>Un Marco de Blockchain Permisionada para Credenciales Académicas Verificables: Un Caso de Estudio para la Universidad de San Carlos de Guatemala (USAC)</h2>
-      <hr>
-      <h3>1. Planteamiento del Problema (El "Porqué")</h3>
-      <ul>
-        <li>Sistema Actual: El proceso de verificación de credenciales académicas (títulos, expedientes, certificados) es lento, manual y costoso. Depende de documentos físicos que son susceptibles a la falsificación o requiere una comunicación directa y lenta con la oficina de registro de la universidad.</li>
-        <li>Falta de Confianza: Los empleadores y otras instituciones no tienen una forma inmediata de confiar en un PDF digital o una imagen escaneada de un título. Deben iniciar un proceso de verificación de varios pasos que puede durar días o semanas.</li>
-        <li>Sin Propiedad del Estudiante: Los graduados tienen poco control sobre sus propios expedientes académicos. Dependen de la universidad para que actúe como un intermediario de confianza para cada solicitud de verificación.</li>
-      </ul>
-      <h3>2. Solución Propuesta (El "Qué")</h3>
-      <p>Diseñar, implementar y evaluar una aplicación descentralizada (dApp) construida sobre una blockchain privada y permisionada (como Hyperledger Fabric) que permita a la USAC emitir credenciales digitales a prueba de manipulaciones y verificables al instante.</p>
-      <ul>
-        <li>La Universidad (Emisor): La USAC es la única autoridad en la red que puede emitir y, si es necesario, revocar credenciales.</li>
-        <li>El Graduado (Propietario): El graduado recibe su credencial en un formato digital que controla. Puede optar por compartir un enlace de verificación o un código QR con cualquier persona. Esto se alinea con el concepto de Identidad Auto-Soberana (SSI).</li>
-        <li>El Empleador (Verificador): Un empleador o cualquier tercero puede escanear el código QR o usar el enlace para obtener una confirmación inmediata y criptográficamente segura directamente desde la blockchain de que la credencial es válida y fue emitida por la USAC.</li>
-      </ul>
-      <h3>3. Conceptos Clave y Palabras Clave</h3>
-      <ul>
-        <li>Blockchain Permisionada: A diferencia de Bitcoin, esta es una red privada donde solo los participantes autorizados (la USAC y, potencialmente, otras universidades en el futuro) pueden escribir en el libro mayor (ledger). Esto es crucial para la confianza y el control.</li>
-        <li>Hyperledger Fabric: La tecnología ideal para esto. Es un marco de código abierto de nivel empresarial para construir blockchains permisionadas. Es modular, no requiere una criptomoneda (no hay "tarifas de gas" en el sentido tradicional) y se centra en la identidad y el control de acceso.</li>
-        <li>Contratos Inteligentes (Chaincode en Fabric): La lógica de negocio de la aplicación. Son programas que se ejecutan en la blockchain y que definen las reglas sobre cómo se crean, estructuran y verifican las credenciales.</li>
-        <li>Identidad Digital e Identidad Auto-Soberana (SSI): El concepto académico de que los individuos deben poseer y controlar su propia identidad digital y las credenciales asociadas a ella.</li>
-        <li>Criptografía: Se utilizan pares de claves pública/privada para firmar transacciones, garantizando la autenticidad e integridad.</li>
-      </ul>
-      <hr>
-      <h3>4. Arquitectura del Sistema</h3>
-      <p>Un prototipo constaría de tres componentes principales:</p>
-      <h4>1. La Red Blockchain (Backend):</h4>
-      <ul>
-        <li>Tecnología: Hyperledger Fabric.</li>
-        <li>Componentes:
-          <ul>
-            <li>Autoridad de Certificación (CA): Emite identidades digitales a los administradores de la universidad.</li>
-            <li>Servicio de Ordenamiento (Ordering Service): Crea los bloques y ordena las transactions.</li>
-            <li>Pares (Peers): Almacenan copias del libro mayor (la base de datos de todas las credenciales) y ejecutan los contratos inteligentes.</li>
-          </ul>
-        </li>
-        <li>Chaincode (Contrato Inteligente):
-          <ul>
-            <li><code>issueCredential(studentID, credentialDetails, issueDate, hash)</code>: Crea una nueva credencial en el libro mayor.</li>
-            <li><code>verifyCredential(credentialID)</code>: Devuelve los detalles de una credencial si existe y es válida.</li>
-            <li><code>revokeCredential(credentialID, reason)</code>: Marca una credencial como ya no válida (por ejemplo, en caso de deshonestidad académica).</li>
-          </ul>
-        </li>
-      </ul>
-      <h4>2. Portal de Administración de la Universidad (Aplicación Web):</h4>
-      <ul>
-        <li>Una interfaz web segura donde un administrador autorizado de la USAC puede iniciar sesión.</li>
-        <li>Funcionalidad:
-          <ul>
-            <li>Ver un panel de control de todas las credenciales emitidas.</li>
-            <li>Llenar un formulario para emitir un nuevo título o certificado a un estudiante.</li>
-            <li>Revocar una credencial si es necesario.</li>
-          </ul>
-        </li>
-        <li>Stack Tecnológico (Ejemplo): Backend en Node.js (Express) para comunicarse con el SDK de Fabric, y un frontend en React/Vue.js.</li>
-      </ul>
-      <h4>3. Portal de Verificación Público (Página Web Simple):</h4>
-      <ul>
-        <li>Una página web simple y de acceso público.</li>
-        <li>Funcionalidad:
-          <ul>
-            <li>Tiene un único campo de entrada donde cualquiera puede pegar un credentialID.</li>
-            <li>La página llama a la función <code>verifyCredential</code> en la blockchain.</li>
-            <li>Luego muestra un mensaje claro de "✅ Verificado" o "❌ No Encontrado / Revocado", junto con los detalles no sensibles (ej. Nombre del Título, Carrera, Fecha de Graduación).</li>
-          </ul>
-        </li>
-      </ul>
-      <hr>
-      <h3>5. Plan de Trabajo y Metodología de la Tesis</h3>
-      <h4>1. Fase 1: Investigación y Diseño (Semanas 1-4)</h4>
-      <ul>
-        <li>Revisión de la literatura sobre blockchain en la educación e Identidad Auto-Soberana.</li>
-        <li>Estudio en profundidad de la arquitectura de Hyperledger Fabric.</li>
-        <li>Finalizar la arquitectura del sistema, los modelos de datos para las credenciales y las funciones del contrato inteligente.</li>
-      </ul>
-      <h4>2. Fase 2: Implementación (Semanas 5-12)</h4>
-      <ul>
-        <li>Configurar la red Hyperledger Fabric en una máquina local o en un servidor en la nube.</li>
-        <li>Desarrollar y probar el Chaincode (contrato inteligente) en Go, JavaScript o Java.</li>
-        <li>Construir el portal web de Administración de la Universidad.</li>
-        <li>Construir la página web de Verificación Pública.</li>
-      </ul>
-      <h4>3. Fase 3: Evaluación (Semanas 13-14)</h4>
-      <ul>
-        <li>Pruebas Funcionales: ¿Funciona el sistema de principio a fin?</li>
-        <li>Pruebas de Rendimiento: ¿Cuánto tiempo se tarda en emitir y verificar una credencial? (Latencia de la transacción).</li>
-        <li>Análisis de Seguridad: Analizar posibles vectores de ataque. ¿Es robusto el control de acceso para el portal de administración? ¿Es sólida la lógica del chaincode?</li>
-      </ul>
-      <h4>4. Fase 4: Redacción de la Tesis (Semanas 15-18)</h4>
-      <ul>
-        <li>Documentar todo el proceso: el problema, el diseño, la implementación y los resultados de la evaluación.</li>
-        <li>Discutir las limitaciones, los beneficios y el trabajo futuro (por ejemplo, expandir la red a otras universidades de Guatemala).</li>
-      </ul>
-      <h3>6. Desafíos Potenciales</h3>
-      <ul>
-        <li>Curva de Aprendizaje: Hyperledger Fabric es potente pero complejo de configurar por primera vez.</li>
-        <li>Gestión de Claves: La gestión segura de las claves criptográficas de la universidad es fundamental.</li>
-        <li>Control del Alcance: El objetivo es un prototipo. Evitar el "feature creep" (la adición de funcionalidades no planificadas). Una interfaz web simple es suficiente para probar el concepto.</li>
-      </ul>
-    </div>
-    <hr class="tema-separator">
-    <div id="tema-3">
-      <h2>Ledger Sanguis - Un Sistema Nacional de Gestión de Inventario de Bancos de Sangre para Guatemala Basado en Blockchain</h2>
-      <h3>1. Resumen / Resumen Ejecutivo</h3>
-      <p>Esta tesis propone el diseño, desarrollo y simulación de "Ledger Sanguis", un sistema nacional de gestión de inventario de sangre en tiempo real para Guatemala, construido sobre una blockchain de consorcio privada. El sistema actual de gestión de inventario de sangre está fragmentado entre hospitales públicos (IGSS, hospitales nacionales), hospitales privados y la Cruz Roja Guatemalteca, lo que conduce a ineficiencias críticas, desperdicio de unidades perecederas y retrasos que amenazan la vida durante emergencias nacionales. Ledger Sanguis crea una fuente única, inmutable y confiable de la verdad sobre la ubicación, estado y tipo de cada unidad de sangre en el país. Al conectar a todos los principales interesados en un registro compartido, el sistema busca reducir drásticamente los tiempos de búsqueda de tipos de sangre raros, optimizar la distribución nacional, minimizar el desperdicio por vencimiento y proporcionar un mecanismo de respuesta robusto y coordinado para eventos con víctimas en masa, una amenaza recurrente en un país vulnerable a desastres naturales.</p>
-      <h3>2. Planteamiento del Problema</h3>
-      <ul>
-        <li>Fragmentación: El sistema de salud de Guatemala es una mezcla de entidades públicas, privadas y sin fines de lucro. Sus sistemas de inventario están en silos; no se comunican entre sí en tiempo real. Un hospital que necesita un tipo de sangre raro debe recurrir a llamadas telefónicas manuales, un proceso lento y poco confiable.</li>
-        <li>Falta de Visibilidad en Tiempo Real: No existe una vista central y en vivo del suministro nacional de sangre. Esto hace imposible la planificación estratégica y caótica la respuesta a emergencias. Es difícil saber si una escasez regional es crítica o si existe un amplio suministro a solo unos pocos kilómetros de distancia.</li>
-        <li>Perecibilidad y Desperdicio: Los productos sanguíneos tienen una vida útil corta (aprox. 42 días para los glóbulos rojos). Sin un sistema coordinado para mover unidades de áreas de baja demanda a áreas de alta demanda, las valiosas donaciones vencen y se descartan, lo que representa un trágico desperdicio de un recurso que salva vidas.</li>
-        <li>Ineficiencia en la Respuesta a Emergencias: Guatemala es propensa a desastres naturales (volcanes, terremotos, huracanes). Durante una emergencia nacional, la capacidad de localizar y movilizar rápidamente los suministros de sangre es una cuestión de vida o muerte. El sistema manual actual es totalmente inadecuado para una respuesta rápida y a gran escala.</li>
-        <li>Integridad de Datos y Confianza: Los sistemas manuales, en papel o en simples hojas de cálculo son propensos a errores humanos, pérdida de datos y no pueden proporcionar un rastro de auditoría completo desde el donante hasta el receptor, cual es crítico para la seguridad y la confianza.</li>
-      </ul>
-      <h3>3. Solución Propuesta: Ledger Sanguis</h3>
-      <p>Ledger Sanguis es una red de blockchain permisionada donde las instituciones participantes (hospitales, Cruz Roja, Ministerio de Salud) operan nodos. Funciona como un registro digital compartido para rastrear las unidades de sangre como activos.</p><p>Características Clave:</p>
-      <ul>
-        <li>Tokenización de Activos: Cada unidad de sangre donada se "tokeniza" como un activo único y no fungible en la blockchain tras su análisis exitoso. Este token contiene metadatos clave:
-          <ul>
-            <li>ID de Unidad Único</li>
-            <li>Tipo de Sangre (A+, O-, etc.)</li>
-            <li>Fecha y Lugar de Donación</li>
-            <li>Fecha de Vencimiento</li>
-            <li>Ubicación Actual (Hospital/Banco de Sangre)</li>
-            <li>Estado Actual (Disponible, Reservada, En Tránsito, Usada)</li>
-          </ul>
-        </li>
-        <li>Pista de Auditoría Inmutable: Cada acción (donación, transferencia entre hospitales, reserva para cirugía, uso final) se registra como una transacción en la blockchain, creando un historial permanente e inalterable para cada unidad.</li>
-        <li>Panel de Inventario Nacional en Tiempo Real: Una aplicación web segura proporciona a los usuarios autorizados una vista gráfica y en vivo del suministro nacional de sangre, filtrable por tipo de sangre, región y fecha de vencimiento.</li>
-        <li>Alertas Automatizadas: Los contratos inteligentes activan automáticamente alertas para las unidades que se acercan a su fecha de vencimiento, instando al personal a priorizar su uso o transferirlas a una instalación con mayor demanda.</li>
-        <li>Protocolo de Emergencia: En una emergencia nacional declarada, el sistema puede activar un protocolo especial que otorga a un organismo de coordinación central (por ejemplo, un centro de comando de emergencia nacional) acceso temporal de solo lectura al inventario detallado de todas las instituciones participantes para dirigir la logística de manera eficiente.</li>
-        <li>Portal del Donante: Una función que permite a los donantes iniciar sesión de forma segura y ver el estado de su donación (por ejemplo, "En tránsito a Quetzaltenango", "Usada en el Hospital Roosevelt"), proporcionando una retroalimentación positiva y poderosa que fomenta futuras donaciones.</li>
-      </ul>
-      <h3>4. Arquitectura del Sistema y Detalles Técnicos</h3>
-      <ul>
-        <li>Tipo de Blockchain: Una Blockchain de Consorcio Privada. Esto es esencial para la privacidad, la escalabilidad y la gobernanza.</li>
-        <li>Plataforma Recomendada: Hyperledger Fabric. Su arquitectura de canales es ideal, permitiendo el intercambio de datos privados.</li>
-        <li>Nodos: Cada hospital importante (ej. Roosevelt, San Juan de Dios), la red del IGSS, la Cruz Roja Guatemalteca y el Ministerio de Salud alojarían nodos pares.</li>
-        <li>Contratos Inteligentes (Chaincode):
-          <ul>
-            <li><code>crearUnidad()</code>: Invocado por un banco de sangre para tokenizar una nueva donación.</li>
-            <li><code>transferirUnidad()</code>: Para registrar el movimiento físico de una unidad.</li>
-            <li><code>solicitarUnidad()</code>: Para difundir la necesidad de un tipo de sangre específico.</li>
-            <li><code>reservarUnidad()</code>: Para marcar temporalmente una unidad como reservada.</li>
-            <li><code>usarUnidad()</code>: Para marcar una unidad como transfundida, completando su ciclo de vida.</li>
-          </ul>
-        </li>
-        <li>Almacenamiento de Datos Fuera de la Cadena (Off-Chain): Críticamente, ninguna Información de Identificación Personal (PII) de donantes o pacientes se almacena en la blockchain. La blockchain almacena el ID de Unidad anónimo, que actúa como una clave foránea segura para vincular el activo en la cadena con los datos privados fuera de la cadena.</li>
-        <li>Capa de Aplicación: Una aplicación web segura (ej. construida con React/Node.js) que interactúa con la blockchain a través de una API.</li>
-      </ul>
-      <h3>5. Plan de Implementación de la Tesis</h3>
-      <ul>
-        <li>Fase 1: Revisión de Literatura, Requisitos del Sistema y Diseño Arquitectónico.</li>
-        <li>Fase 2: Desarrollo de Contratos Inteligentes y pruebas en una red local de Hyperledger Fabric.</li>
-        <li>Fase 3: Desarrollo de la Aplicación Frontend (Dashboard) e integración de la API.</li>
-        <li>Fase 4: Simulación del Sistema (incluyendo un evento de víctimas en masa), Análisis de Rendimiento y Redacción Final de la Tesis.</li>
-      </ul>
-    </div>
-    <hr class="tema-separator">
-    <div id="tema-4">
-      <h2>SIGILO - Sistema de Gestión Inmutable para la Logística de Opiáceos y Controlados</h2>
-      <h3>1. Resumen / Resumen Ejecutivo</h3>
-      <p>Esta tesis propone el diseño e implementación de SIGILO, un sistema nacional basado en blockchain para el monitoreo de la prescripción y dispensación de sustancias controladas en Guatemala. El sistema actual, basado en papel para las "recetas de control especial", es vulnerable a la falsificación, facilita la práctica de "doctor shopping" (pacientes que obtienen múltiples recetas de diferentes médicos) y permite el desvío de fármacos legales al mercado negro. Además, no proporciona datos en tiempo real al Ministerio de Salud para rastrear tendencias de adicción y crisis de salud pública. SIGILO reemplaza el rastro de papel inseguro con un registro digital criptográficamente seguro, en tiempo real y auditable. Al crear una fuente única e inmutable de la verdad, SIGILO busca prevenir el fraude de recetas, proporcionar a médicos y farmacéuticos una herramienta para garantizar la seguridad del paciente y equipar a los funcionarios de salud pública con los datos anonimizados necesarios para diseñar políticas nacionales efectivas sobre adicción y abuso de sustancias.</p>
-      <h3>2. Planteamiento del Problema</h3>
-      <ul>
-        <li>Doctor Shopping: Un paciente puede visitar a múltiples médicos, quejarse de los mismos síntomas y obtener múltiples recetas de sustancias controladas. Sin un registro central en tiempo real, cada médico desconoce las otras prescripciones.</li>
-        <li>Recetas Falsificadas: Los recetarios especiales de papel son fáciles de falsificar, robar o vender ilegalmente. Los farmacéuticos tienen medios limitados para verificar rápidamente la autenticidad de una receta.</li>
-        <li>Desvío al Mercado Negro: Los fármacos prescritos legalmente a menudo se desvían y venden ilegalmente. La falta de un sistema de seguimiento robusto dificulta la identificación de los puntos de fuga.</li>
-        <li>Vacío de Datos para la Salud Pública: El Ministerio de Salud (MSPAS) no tiene una forma efectiva de recopilar datos a nivel nacional sobre el consumo de sustancias controladas, lo que hace casi imposible la formulación de políticas basadas en evidencia.</li>
-        <li>Riesgo para la Seguridad del Paciente: Los pacientes que practican el "doctor shopping" corren un riesgo extremadamente alto de sobredosis y de desarrollar una adicción severa.</li>
-      </ul>
-      <h3>3. Solución Propuesta: SIGILO</h3>
-      <p>SIGILO es una blockchain de consorcio privada donde cada médico, farmacia y organismo regulador con licencia opera un nodo. Digitaliza todo el ciclo de vida de una receta de sustancia controlada.</p><p>Características Clave:</p>
-      <ul>
-        <li>Recetas Digitales y Firmadas Criptográficamente: Un médico crea una receta digital (un token único) en la blockchain, firmada con su clave criptográfica personal, lo que la hace infalsificable.</li>
-        <li>Registro de Prescripciones del Paciente en Tiempo Real: Antes de emitir una receta, un médico puede consultar el sistema utilizando el ID nacional (DPI) hasheado de un paciente. El sistema revelará si el paciente tiene alguna receta de sustancia controlada activa y no dispensada, alertando sobre un posible "doctor shopping".</li>
-        <li>Tokens de Prescripción de "Uso Único": Cuando un farmacéutico dispensa el medicamento, "reclama" o "gasta" el token de la receta digital. La blockchain registra esta transacción de forma inmutable, y el token no puede ser utilizado de nuevo.</li>
-        <li>Panel de Análisis Anonimizado para el MSPAS: El Ministerio de Salud tiene un nivel de acceso especial de solo lectura que le permite ver datos agregados y anonimizados para identificar tendencias de salud pública sin ver datos de pacientes o médicos individuales.</li>
-        <li>Portal de Auditoría para Colegios Profesionales: El Colegio de Médicos y el Colegio de Farmacéuticos pueden tener un portal para revisar los patrones de prescripción y dispensación de sus miembros.</li>
-      </ul>
-      <h3>4. Arquitectura del Sistema y Detalles Técnicos</h3>
-      <ul>
-        <li>Tipo de Blockchain: Blockchain de Consorcio Privada (ej. Hyperledger Fabric o Quorum).</li>
-        <li>Modelo de Privacidad (Crucial):
-          <ul>
-            <li>No PII en la Cadena: Nombres de pacientes, etc., NUNCA se almacenan en la blockchain.</li>
-            <li>Identificador de Paciente Hasheado: Se utiliza un hash con "sal" (salted hash) del número de DPI del paciente como su identificador seudónimo.</li>
-            <li>Arquitectura de Canales (Hyperledger Fabric): Los detalles de la receta podrían estar en un canal accesible solo para las partes autorizadas.</li>
-          </ul>
-        </li>
-        <li>Contratos Inteligentes (Chaincode):
-          <ul>
-            <li><code>emitirReceta(pacienteIDHasheado, detallesFarmaco, firma)</code>: Crea el token de la receta.</li>
-            <li><code>obtenerHistorialPaciente(pacienteIDHasheado)</code>: Devuelve una lista de tokens de recetas activas.</li>
-            <li><code>dispensarReceta(IDReceta, firmaFarmaceutico)</code>: Marca el token como "dispensado".</li>
-          </ul>
-        </li>
-        <li>Gestión de Identidad: Cada médico y farmacéutico recibiría un certificado de identidad digital de su respectivo Colegio para firmar transacciones.</li>
-        <li>Capa de Aplicación: Un portal web seguro y/o una API para la integración en sistemas de Registros de Salud Electrónicos (EHR) existentes.</li>
-      </ul>
-      <h3>5. Escenario de Flujo de Trabajo: Previniendo el Fraude</h3>
-      <ol>
-        <li>Visita: Un paciente visita a un médico.</li>
-        <li>Verificación: El médico introduce el DPI del paciente en el software SIGILO. El software calcula el hash y consulta la blockchain. La consulta devuelve "No se encontraron recetas de sustancias controladas activas".</li>
-        <li>Emisión: El médico prescribe Diazepam, firma la transacción con su clave privada y se crea un nuevo token de receta. Se imprime un código QR o se envía al teléfono del paciente.</li>
-        <li>Dispensación: El paciente va a una farmacia. El farmacéutico escanea el código QR, que muestra la receta válida y no dispensada.</li>
-        <li>Reclamo: El farmacéutico dispensa el medicamento y hace clic en "Dispensar". Firma la transacción, y la blockchain registra que este token de receta específico ha sido utilizado.</li>
-        <li>Intento de Fraude: El paciente lleva el mismo código QR a otra farmacia. El segundo farmacéutico lo escanea, pero el sistema SIGILO devuelve inmediatamente "Receta ya dispensada en [Nombre de la Farmacia] el [Fecha/Hora]". El fraude se previene instantáneamente.</li>
-      </ol>
-      <h3>6. Plan de Implementación de la Tesis</h3>
-      <ul>
-        <li>Fase 1: Análisis de las regulaciones del MSPAS, entrevistas con los interesados y finalización de la arquitectura del sistema y el modelo de privacidad.</li>
-        <li>Fase 2: Desarrollo de los contratos inteligentes principales en una red de prueba de Hyperledger Fabric.</li>
-        <li>Fase 3: Desarrollo de la aplicación web frontend para médicos y farmacéuticos y el panel de análisis para el MSPAS.</li>
-        <li>Fase 4: Integración, pruebas del sistema con datos simulados, análisis de rendimiento y redacción y defensa final de la tesis.</li>
-      </ul>
-    </div>
-  </div>
+
+    <h1>Propuesta de Tesis</h1>
+    <h2>Sistema para el Registro y Verificación Inmutable de Títulos en la Facultad de Ingeniería de la USAC, Basado en Tecnología Blockchain</h2>
+
+    <h2>1. Introducción</h2>
+    <p>En la era digital, la validación de credenciales académicas es un pilar fundamental para el mercado laboral y la continuación de estudios superiores. Sin embargo, los métodos tradicionales de verificación de títulos universitarios a menudo se basan en procesos manuales, lentos y centralizados. Esto no solo genera ineficiencias administrativas para las instituciones, sino que también presenta una barrera para los egresados y una ventana de oportunidad para la falsificación de documentos. La confianza en la autenticidad de un título es crucial, y los sistemas actuales luchan por ofrecerla de una manera ágil y segura.</p>
+    <p>Esta propuesta de tesis aborda dicha problemática mediante el diseño y desarrollo de un sistema moderno, descentralizado y seguro, utilizando la tecnología blockchain. El objetivo es crear un prototipo funcional que permita a la Facultad de Ingeniería de la Universidad de San Carlos de Guatemala (USAC) emitir títulos digitales inmutables y ofrecer un mecanismo de verificación instantáneo y público, empoderando al egresado y fortaleciendo la reputación y seguridad de la institución.</p>
+
+    <h2>2. Antecedentes</h2>
+    <p>La verificación de credenciales ha evolucionado desde los documentos en papel con sellos y firmas, hasta las bases de datos centralizadas. En la USAC, el proceso actual depende del Departamento de Registro y Estadística, que atiende solicitudes de forma manual, un procedimiento que puede tardar semanas.</p>
+    <p>A nivel global, instituciones como el MIT (con sus Digital Credentials) han sido pioneras en la emisión de credenciales digitales. Más recientemente, ha surgido un interés creciente en el uso de blockchain para este fin. Proyectos en diversas universidades han demostrado la viabilidad de registrar títulos en redes como Ethereum. Sin embargo, muchos de estos proyectos no abordan las necesidades específicas de control, privacidad y costos de una institución pública, lo que justifica la investigación de soluciones basadas en blockchains permisionadas como Hyperledger Fabric, que representa el estado del arte para aplicaciones empresariales y consorcios.</p>
+
+    <h2>3. Planteamiento del Problema</h2>
+    <p>El proceso actual de verificación de títulos en la Facultad de Ingeniería es centralizado y depende de procedimientos manuales. Este sistema presenta varias desventajas: lentitud en el procesamiento de solicitudes, vulnerabilidad a la falsificación, altos costos administrativos por la carga de trabajo manual y una total dependencia del egresado hacia la universidad para validar su credencial más importante. La falta de un sistema ágil, transparente y seguro representa un obstáculo para los egresados y un riesgo para la institución.</p>
+
+    <h2>4. Hipótesis</h2>
+    <p>La implementación de un sistema basado en la tecnología blockchain permisionada (Hyperledger Fabric) para la gestión de títulos en la Facultad de Ingeniería de la USAC, permitirá reducir el tiempo de verificación de días a segundos y eliminará virtualmente el riesgo de falsificación de credenciales, en comparación con el proceso manual y centralizado existente.</p>
+
+    <h2>5. Justificación</h2>
+    <p>Este proyecto se justifica por la necesidad de modernizar y asegurar los procesos de la Facultad de Ingeniería. La tecnología blockchain ofrece una solución robusta que garantiza la inmutabilidad y seguridad de los registros. A través de la descentralización, se puede ofrecer transparencia y un mecanismo de verificación instantáneo y universal. Esto no solo reduce costos y automatiza procesos, sino que también empodera al egresado con un título digital verificable y posiciona a la Facultad y a la USAC como líderes en la adopción de tecnologías innovadoras en la región.</p>
+
+    <h2>6. Objetivos</h2>
+    <h3>6.1. Objetivo General</h3>
+    <p>Desarrollar un prototipo funcional de un sistema basado en tecnología blockchain para la emisión, registro y verificación inmutable de títulos universitarios de la Facultad de Ingeniería de la USAC.</p>
+    <h3>6.2. Objetivos Específicos</h3>
+    <ul>
+        <li>Analizar el proceso actual de emisión y verificación de títulos para definir los requisitos del nuevo sistema.</li>
+        <li>Diseñar la arquitectura de una solución blockchain permisionada, incluyendo la estructura del chaincode, los canales y la gestión de identidades.</li>
+        <li>Desarrollar el chaincode (contrato inteligente) en Hyperledger Fabric que permita registrar y verificar la validez de los títulos.</li>
+        <li>Implementar una aplicación web que sirva como interfaz para que el personal administrativo emita los títulos y para que terceros los verifiquen de forma sencilla a través de un <strong>enlace único o un código QR</strong>.</li>
+        <li>Realizar pruebas funcionales del prototipo para validar su efectividad, seguridad y usabilidad en un entorno controlado.</li>
+    </ul>
+
+    <h2>7. Marco Teórico</h2>
+    <p>Este proyecto se sustenta en varios conceptos tecnológicos clave:</p>
+    <ul>
+        <li><strong>Tecnología Blockchain:</strong> Un libro de contabilidad digital, distribuido e inmutable, que registra transacciones en una cadena de bloques enlazados y asegurados mediante criptografía.</li>
+        <li><strong>Blockchain Permisionada:</strong> A diferencia de las redes públicas (como Bitcoin o Ethereum), una red permisionada restringe el acceso a participantes conocidos y autorizados. Hyperledger Fabric es el principal exponente de este modelo, ideal para consorcios y empresas que requieren control y privacidad.</li>
+        <li><strong>Hyperledger Fabric:</strong> Es una plataforma blockchain de código abierto mantenida por la Linux Foundation. Su arquitectura modular incluye componentes como <strong>Peers</strong> (nodos que alojan el ledger y el chaincode), <strong>Orderers</strong> (nodos que crean el orden de las transacciones) y un <strong>Membership Service Provider (MSP)</strong> para gestionar las identidades de los participantes.</li>
+        <li><strong>Chaincode (Contrato Inteligente):</strong> Es el programa que contiene la lógica de negocio y se ejecuta en la red de Fabric. Define las reglas para crear y modificar activos en el ledger.</li>
+        <li><strong>IPFS (InterPlanetary File System):</strong> Es un protocolo y red para el almacenamiento de archivos de forma distribuida. Se utiliza para almacenar el archivo del título (PDF) fuera de la cadena (off-chain), guardando únicamente su hash inmutable en la blockchain para garantizar su integridad.</li>
+    </ul>
+
+    <h2>8. Propuesta Tecnológica (Stack)</h2>
+    <ul>
+        <li><strong>Plataforma Blockchain:</strong> <code>Hyperledger Fabric</code></li>
+        <li><strong>Lenguaje del Chaincode:</strong> <code>Go (Golang)</code> o <code>Node.js</code></li>
+        <li><strong>Almacenamiento de Archivos (Off-Chain):</strong> <code>IPFS</code></li>
+        <li><strong>SDK de Fabric:</strong> <code>Fabric SDK para Node.js</code></li>
+        <li><strong>Frontend:</strong> <code>React.js</code> o <code>Vue.js</code></li>
+        <li><strong>Backend:</strong> <code>Node.js con Express.js</code></li>
+        <li><strong>Base de Datos Auxiliar:</strong> <code>PostgreSQL</code> o <code>MongoDB</code></li>
+    </ul>
+
+    <h2>9. Alcance y Delimitación</h2>
+    <p><strong>Alcance:</strong> El proyecto se centrará en crear un prototipo funcional que demuestre la viabilidad del concepto. Incluirá la emisión de títulos de prueba y su verificación a través de un portal público.</p>
+    <p><strong>Delimitación:</strong> El sistema será un complemento y no un reemplazo del sistema físico actual. Se aplicará únicamente al contexto de la Facultad de Ingeniería y no gestionará datos personales sensibles en la blockchain, solo identificadores públicos y el hash del título. El despliegue se realizará en un entorno de desarrollo local, no en una red de producción.</p>
+
 </body>
 </html>
